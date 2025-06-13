@@ -1,2 +1,4 @@
 User-agent: *
-Disallow: /bootstrap_theme/
+Allow: /
+Disallow: /assets/vendor/
+Disallow: /assets/scss/
