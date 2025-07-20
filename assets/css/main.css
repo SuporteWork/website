@@ -19,12 +19,27 @@
 
 /* Global Colors - The following color variables are used throughout the website. Updating them here will change the color scheme of the entire website */
 :root {
-  --background-color: #000000; /* Background color for the entire website, including individual sections */
-  --default-color: #272829; /* Default color used for the majority of the text content across the entire website */
-  --heading-color: #45505b; /* Color for headings, subheadings and title throughout the website */
-  --accent-color: #0563bb; /* Accent color that represents your brand on the website. It's used for buttons, links, and other elements that need to stand out */
-  --surface-color: #ffffff; /* The surface color is used as a background of boxed elements within sections, such as cards, icon boxes, or other elements that require a visual separation from the global background. */
+  --background-color: #0a0a0a; /* Background color for the entire website, including individual sections */
+  --default-color: #e0e0e0; /* Default color used for the majority of the text content across the entire website */
+  --heading-color: #ffffff; /* Color for headings, subheadings and title throughout the website */
+  --accent-color: #2563eb; /* Accent color that represents your brand on the website. It's used for buttons, links, and other elements that need to stand out */
+  --surface-color: #111111; /* The surface color is used as a background of boxed elements within sections, such as cards, icon boxes, or other elements that require a visual separation from the global background. */
   --contrast-color: #ffffff; /* Contrast color for text, ensuring readability against backgrounds of accent, heading, or default colors. */
+}
+
+/* Base Styles */
+html {
+  scroll-behavior: smooth;
+  height: 100%;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  min-height: 100vh;
+  overflow-x: hidden;
+  font-family: var(--default-font);
+  color: var(--default-color);
 }
 
 /* Nav Menu Colors - The following color variables are used specifically for the navigation menu. They are separate from the global colors to allow for more customization options */
@@ -48,6 +63,41 @@
   --background-color: #060606;
   --default-color: #ffffff;
   --heading-color: #ffffff;
+}
+
+/* Hero Section */
+.hero {
+  width: 100%;
+  min-height: 100vh;
+  position: relative;
+  padding: 80px 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.hero img {
+  position: absolute;
+  inset: 0;
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  z-index: 1;
+}
+
+.hero:before {
+  content: "";
+  background: color-mix(in srgb, var(--background-color), transparent 30%);
+  position: absolute;
+  inset: 0;
+  z-index: 2;
+}
+
+.hero .container {
+  position: relative;
+  z-index: 3;
+}
   --surface-color: #252525;
   --contrast-color: #ffffff;
 }
@@ -281,11 +331,13 @@ h6 {
 --------------------------------------------------------------*/
 .footer {
   color: var(--default-color);
-  background-color: var(--background-color);
+  background-color: rgba(0, 0, 0, 0.3);
   font-size: 14px;
   text-align: center;
-  padding: 30px 0;
+  padding: 40px 0;
   position: relative;
+  backdrop-filter: blur(10px);
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
 }
 
 .footer h3 {
@@ -293,14 +345,24 @@ h6 {
   font-weight: 700;
   position: relative;
   padding: 0;
-  margin: 0 0 15px 0;
+  margin: 0 0 20px 0;
+  color: var(--heading-color);
 }
 
 .footer p {
-  font-size: 15;
+  font-size: 16px;
   font-style: italic;
   padding: 0;
   margin: 0 0 30px 0;
+  line-height: 1.6;
+}
+
+.footer .copyright {
+  margin-bottom: 10px;
+}
+
+.footer .sitename {
+  color: var(--accent-color);
 }
 
 .footer .social-links {
@@ -459,10 +521,24 @@ h6 {
 --------------------------------------------------------------*/
 section,
 .section {
-  color: #ffffff;
+  color: var(--default-color);
   background-color: var(--background-color);
-  padding: 60px 0;
+  padding: 80px 0;
   overflow: clip;
+  position: relative;
+}
+
+section::before,
+.section::before {
+  content: '';
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  background: radial-gradient(circle at top right, rgba(37, 99, 235, 0.1) 0%, transparent 60%),
+              radial-gradient(circle at bottom left, rgba(37, 99, 235, 0.05) 0%, transparent 40%);
+  pointer-events: none;
 }
 
 /*--------------------------------------------------------------
@@ -475,23 +551,32 @@ section,
 }
 
 .section-title h2 {
-  font-size: 32px;
+  font-size: 36px;
   font-weight: 700;
   margin-bottom: 20px;
   padding-bottom: 20px;
   position: relative;
+  background: linear-gradient(90deg, var(--heading-color), var(--accent-color));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  display: inline-block;
 }
 
 .section-title h2:before {
   content: "";
   position: absolute;
   display: block;
-  width: 160px;
-  height: 1px;
-  background: color-mix(in srgb, var(--default-color), transparent 60%);
+  width: 100%;
+  height: 2px;
+  background: linear-gradient(90deg, 
+    transparent,
+    rgba(37, 99, 235, 0.3),
+    transparent
+  );
   left: 0;
   right: 0;
-  bottom: 1px;
+  bottom: 0;
   margin: auto;
 }
 
@@ -499,13 +584,15 @@ section,
   content: "";
   position: absolute;
   display: block;
-  width: 60px;
-  height: 3px;
+  width: 40px;
+  height: 4px;
   background: var(--accent-color);
-  left: 0;
-  right: 0;
-  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  bottom: -2px;
   margin: auto;
+  border-radius: 2px;
+  box-shadow: 0 0 15px var(--accent-color);
 }
 
 .section-title p {
@@ -548,14 +635,15 @@ section,
   z-index: 3;
 }
 
-.hero h2 {
-  margin: 0;
+.hero h1 {
+  margin: 0 0 20px 0;
   font-size: 64px;
   font-weight: 700;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
 }
 
 .hero p {
-  margin: 5px 0 0 0;
+  margin: 0 0 30px 0;
   font-size: 26px;
 }
 
@@ -565,15 +653,23 @@ section,
 }
 
 .hero .social-links {
-  margin-top: 25px;
+  margin-top: 40px;
+  display: flex;
+  gap: 20px;
 }
 
 .hero .social-links a {
-  font-size: 20px;
-  display: inline-block;
-  color: color-mix(in srgb, #ffffff, transparent 30%);
+  font-size: 24px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--contrast-color);
+  background: rgba(255, 255, 255, 0.1);
   line-height: 1;
-  margin-right: 20px;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  backdrop-filter: blur(4px);
   transition: 0.3s;
 }
 
@@ -596,29 +692,53 @@ section,
 --------------------------------------------------------------*/
 .about .content h2 {
   font-weight: 700;
-  font-size: 24px;
+  font-size: 32px;
+  margin-bottom: 30px;
+  color: var(--heading-color);
 }
 
 .about .content ul {
   list-style: none;
   padding: 0;
+  margin: 0 0 30px 0;
 }
 
 .about .content ul li {
-  margin-bottom: 20px;
+  margin-bottom: 25px;
   display: flex;
-  align-items: center;
+  align-items: flex-start;
+  background: rgba(255, 255, 255, 0.02);
+  padding: 20px;
+  border-radius: 10px;
+  border: 1px solid rgba(255, 255, 255, 0.05);
 }
 
 .about .content ul strong {
-  margin-right: 10px;
+  min-width: 160px;
+  margin-right: 15px;
+  font-size: 18px;
+  color: var(--accent-color);
+}
+
+.about .content ul span {
+  font-size: 16px;
+  line-height: 1.6;
 }
 
 .about .content ul i {
   font-size: 16px;
-  margin-right: 5px;
+  margin-right: 8px;
   color: var(--accent-color);
   line-height: 0;
+}
+
+.about .content .fst-italic {
+  font-size: 16px;
+  line-height: 1.8;
+  padding: 25px !important;
+  background: rgba(255, 255, 255, 0.02);
+  border-radius: 10px;
+  border: 1px solid rgba(255, 255, 255, 0.05);
 }
 
 /*--------------------------------------------------------------
@@ -861,13 +981,14 @@ section,
 # Services Section
 --------------------------------------------------------------*/
 .services .service-item {
-  background-color: #000000;
-  box-shadow: 0px 5px 90px 0px rgba(0, 0, 0, 0.1);
+  background-color: rgba(255, 255, 255, 0.03);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
   height: 100%;
   padding: 60px 30px;
   text-align: center;
-  transition: 0.3s;
-  border-radius: 5px;
+  transition: all 0.3s ease;
+  border-radius: 16px;
 }
 
 .services .service-item .icon {
@@ -911,7 +1032,10 @@ section,
 }
 
 .services .service-item:hover {
-  box-shadow: 0px 5px 35px 0px rgba(0, 0, 0, 0.1);
+  transform: translateY(-5px);
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.2);
+  border-color: rgba(255, 255, 255, 0.2);
+  background-color: rgba(255, 255, 255, 0.05);
 }
 
 .services .service-item.item-cyan i {
@@ -1070,35 +1194,52 @@ section,
 /*--------------------------------------------------------------
 # Contact Section
 --------------------------------------------------------------*/
-.contact .info-item+.info-item {
-  margin-top: 40px;
+.contact .info-item {
+  padding: 30px;
+  background: rgba(255, 255, 255, 0.02);
+  border-radius: 16px;
+  border: 1px solid rgba(255, 255, 255, 0.05);
+  height: 100%;
+  transition: all 0.3s ease;
+}
+
+.contact .info-item:hover {
+  transform: translateY(-5px);
+  background: rgba(255, 255, 255, 0.04);
 }
 
 .contact .info-item i {
-  color: var(--accent-color);
-  background: color-mix(in srgb, var(--accent-color), transparent 92%);
-  font-size: 20px;
-  width: 44px;
-  height: 44px;
+  color: var(--contrast-color);
+  background: var(--accent-color);
+  font-size: 24px;
+  width: 60px;
+  height: 60px;
   display: flex;
   justify-content: center;
   align-items: center;
-  border-radius: 50px;
+  border-radius: 50%;
   transition: all 0.3s ease-in-out;
-  margin-right: 15px;
+  margin-right: 20px;
+  box-shadow: 0 0 20px rgba(37, 99, 235, 0.2);
 }
 
 .contact .info-item h3 {
   padding: 0;
-  font-size: 18px;
+  font-size: 22px;
   font-weight: 700;
-  margin-bottom: 5px;
+  margin-bottom: 10px;
+  color: var(--heading-color);
 }
 
 .contact .info-item p {
   padding: 0;
   margin-bottom: 0;
-  font-size: 14px;
+  font-size: 16px;
+  line-height: 1.5;
+}
+
+.contact .info-item a {
+  text-decoration: none;
 }
 
 .contact .info-item:hover i {
