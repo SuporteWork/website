@@ -73,7 +73,7 @@
   });
 
   window.addEventListener('load', toggleScrollTop);
-  document.addEventListener('scroll', toggleScrollTop);
+  document.addEventListener('scroll', toggleScrollTop, { passive: true });
 
   /**
    * Animation on scroll function and init
@@ -83,7 +83,8 @@
       duration: 600,
       easing: 'ease-in-out',
       once: true,
-      mirror: false
+      mirror: false,
+      disable: () => window.matchMedia('(prefers-reduced-motion: reduce)').matches
     });
   }
   window.addEventListener('load', aosInit);
@@ -142,6 +143,6 @@
     })
   }
   window.addEventListener('load', navmenuScrollspy);
-  document.addEventListener('scroll', navmenuScrollspy);
+  document.addEventListener('scroll', navmenuScrollspy, { passive: true });
 
 })();
