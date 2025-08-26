@@ -212,3 +212,38 @@ section::before, .section::before {
 .contact .info-item:hover i { background: var(--accent-color); color: var(--contrast-color); }
 
 
+/*--------------------------------------------------------------
+# Modals (Bootstrap) - herdam tipografia e paleta do tema
+--------------------------------------------------------------*/
+.modal-backdrop { background-color: #000; }
+.modal-backdrop.show { opacity: .6; }
+
+.modal-content {
+  background: rgba(17,17,17,.98);
+  color: var(--default-color);
+  border: 1px solid rgba(255,255,255,.08);
+  border-radius: 16px;
+  box-shadow: 0 20px 60px rgba(0,0,0,.5);
+  backdrop-filter: blur(8px);
+}
+
+.modal-header {
+  border-bottom: 1px solid rgba(255,255,255,.08);
+}
+
+.modal-title {
+  font-family: var(--heading-font);
+  color: var(--heading-color);
+  font-weight: 700;
+}
+
+.btn-close { filter: invert(1) grayscale(100%); opacity: .7; }
+.btn-close:hover { opacity: 1; }
+
+.modal-body p { font-size: 16px; line-height: 1.7; margin-bottom: 12px; }
+.modal-body ul { padding-left: 18px; margin: 0; }
+.modal-body li { margin-bottom: 8px; }
+
+.modal a { color: var(--accent-color); }
+.modal a:hover { color: color-mix(in srgb, var(--accent-color), transparent 20%); }
+
