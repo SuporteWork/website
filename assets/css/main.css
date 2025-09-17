@@ -174,31 +174,35 @@ section::before, .section::before {
 # Services
 --------------------------------------------------------------*/
 .services .service-item { background-color: rgba(255,255,255,.03); backdrop-filter: blur(10px); border: 1px solid rgba(255,255,255,.1); height: 100%; padding: 60px 30px; text-align: center; transition: all .3s ease; border-radius: 16px; }
-.services .service-item .icon { margin: 0 auto; width: 100px; height: 100px; display: flex; align-items: center; justify-content: center; transition: .3s ease-in-out; position: relative; }
-.services .service-item .icon i { font-size: 36px; transition: .5s; position: relative; }
-.services .service-item .icon svg { position: absolute; top: 0; left: 0; }
-.services .service-item .icon svg path { transition: .5s; fill: color-mix(in srgb, var(--default-color), transparent 95%); }
+.services .service-item .icon {
+  margin: 0 auto;
+  width: 64px;
+  height: 64px;
+  background: var(--accent-color);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 20px;
+  transition: .3s ease-in-out;
+  position: relative;
+}
+.services .service-item .icon i {
+  color: var(--contrast-color);
+  font-size: 28px;
+  transition: .5s;
+  position: relative;
+}
 .services .service-item h3 { font-weight: 700; margin: 10px 0 15px 0; font-size: 22px; }
 .services .service-item p { line-height: 24px; font-size: 14px; margin-bottom: 0; }
 .services .service-item:hover { transform: translateY(-5px); box-shadow: 0 8px 30px rgba(0,0,0,.2); border-color: rgba(255,255,255,.2); background-color: rgba(255,255,255,.05); }
-.services .service-item.item-cyan i { color: #0dcaf0; }
-.services .service-item.item-cyan:hover .icon i { color: #fff; }
-.services .service-item.item-cyan:hover .icon path { fill: #0dcaf0; }
-.services .service-item.item-orange i { color: #fd7e14; }
-.services .service-item.item-orange:hover .icon i { color: #fff; }
-.services .service-item.item-orange:hover .icon path { fill: #fd7e14; }
-.services .service-item.item-teal i { color: #20c997; }
-.services .service-item.item-teal:hover .icon i { color: #fff; }
-.services .service-item.item-teal:hover .icon path { fill: #20c997; }
-.services .service-item.item-red i { color: #df1529; }
-.services .service-item.item-red:hover .icon i { color: #fff; }
-.services .service-item.item-red:hover .icon path { fill: #df1529; }
-.services .service-item.item-indigo i { color: #6610f2; }
-.services .service-item.item-indigo:hover .icon i { color: #fff; }
-.services .service-item.item-indigo:hover .icon path { fill: #6610f2; }
-.services .service-item.item-pink i { color: #f3268c; }
-.services .service-item.item-pink:hover .icon i { color: #fff; }
-.services .service-item.item-pink:hover .icon path { fill: #f3268c; }
+.services .service-item:hover .icon {
+  background: var(--contrast-color);
+}
+.services .service-item:hover .icon i {
+  color: var(--accent-color);
+}
+
 
 /*--------------------------------------------------------------
 # Contact
