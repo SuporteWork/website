@@ -81,18 +81,47 @@ section::before, .section::before {
   transition: all .3s ease-in-out; overflow-y: auto; z-index: 997; min-width: 200px;
 }
 @media (max-width: 1199px) {
-  .header { background-color: var(--background-color); border-right: 1px solid color-mix(in srgb, var(--default-color), transparent 90%); width: 300px; left: -100%; }
+  .header { 
+    background-color: rgba(10, 10, 10, 0.9); 
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    border-right: 1px solid color-mix(in srgb, var(--default-color), transparent 90%); 
+    width: 300px; 
+    left: -100%; 
+  }
 }
 @media (min-width: 1200px) and (max-width: 1600px) {
   .header~main { margin-left: 160px; }
   .header~main .hero { margin-left: -160px; width: 100vw; }
 }
 .header.header-show { left: 0; }
-.header .header-toggle {
-  color: var(--contrast-color); background-color: var(--accent-color); font-size: 22px; display: flex; align-items: center; justify-content: center;
-  width: 40px; height: 40px; border-radius: 50%; cursor: pointer; position: fixed; top: 15px; right: 15px; z-index: 9999; transition: background-color .3s;
+.header-toggle {
+  display: none;
+  color: var(--contrast-color);
+  background-color: var(--accent-color);
+  font-size: 22px;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  cursor: pointer;
+  position: fixed;
+  top: 15px;
+  right: 15px;
+  z-index: 99999;
+  transition: all 0.3s ease;
 }
-.header .header-toggle:hover { background-color: color-mix(in srgb, var(--accent-color) 90%, white 15%); }
+
+.header-toggle:hover {
+  background-color: color-mix(in srgb, var(--accent-color) 90%, white 15%);
+}
+
+@media (max-width: 1199px) {
+  .header-toggle {
+    display: flex;
+  }
+}
 
 .navmenu { padding: 0; z-index: 9997; }
 .navmenu ul { list-style: none; padding: 0 0 20px 0; margin: 0; width: 140px; }
