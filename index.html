@@ -14,52 +14,166 @@
         <meta content="A SuporteWork oferece consultoria e soluções de TI personalizadas para empresas. Especialistas em Helpdesk, Segurança de Dados, Backup, Firewall e mais." name="description">
         <link href="assets/img/favicon.png" rel="icon">
         <link href="assets/img/apple-touch-icon.png" rel="apple-touch-icon">
-        <link href="https://fonts.googleapis.com" rel="preconnect">
-        <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin>
-        <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&family=Poppins:wght@300;400;500;600;700&family=Raleway:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+        
+        <!-- Fonts -->
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&family=Poppins:wght@300;400;500;600;700&family=Raleway:wght@300;400;500;600;700&display=swap" media="print" onload="this.media='all'">
+        <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&family=Poppins:wght@300;400;500;600;700&family=Raleway:wght@300;400;500;600;700&display=swap"></noscript>
+
+        <!-- Preload CSS -->
+        <link rel="preload" href="assets/css/main.css" as="style">
+        <link rel="preload" href="assets/img/hero-bg.webp" as="image">
+
         <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
         <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css" rel="stylesheet">
         <link href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css" rel="stylesheet">
         <link href="assets/css/main.css" rel="stylesheet">
         <link rel="canonical" href="https://suporte.work/"/>
-        <link rel="preload" href="assets/img/hero-bg.webp" as="image">
+        <!-- Open Graph / Facebook -->
+        <meta property="og:type" content="website">
+        <meta property="og:url" content="https://suporte.work/">
+        <meta property="og:title" content="SuporteWork | Consultoria e Suporte em TI">
+        <meta property="og:description" content="A SuporteWork oferece consultoria e soluções de TI personalizadas para empresas. Especialistas em Helpdesk, Segurança de Dados, Backup, Firewall e mais.">
+        <meta property="og:image" content="https://suporte.work/assets/img/profile-img.webp">
+
+        <!-- Twitter -->
+        <meta property="twitter:card" content="summary_large_image">
+        <meta property="twitter:url" content="https://suporte.work/">
+        <meta property="twitter:title" content="SuporteWork | Consultoria e Suporte em TI">
+        <meta property="twitter:description" content="A SuporteWork oferece consultoria e soluções de TI personalizadas para empresas. Especialistas em Helpdesk, Segurança de Dados, Backup, Firewall e mais.">
+        <meta property="twitter:image" content="https://suporte.work/assets/img/profile-img.webp">
+
+        <script type="application/ld+json">
+        {
+          "@context": "https://schema.org",
+          "@graph": [
+            {
+              "@type": "Organization",
+              "name": "SuporteWork",
+              "url": "https://suporte.work/",
+              "logo": "https://suporte.work/assets/img/favicon.png",
+              "contactPoint": {
+                "@type": "ContactPoint",
+                "telephone": "+55-11-99986-0590",
+                "contactType": "customer service",
+                "areaServed": "BR",
+                "availableLanguage": "Portuguese"
+              },
+              "sameAs": [
+                "https://wa.me/5511999860590"
+              ]
+            },
+            {
+              "@type": "Person",
+              "name": "Mauricio Oliveira",
+              "url": "https://suporte.work/",
+              "jobTitle": "Fundador e Especialista em TI",
+              "worksFor": {
+                "@type": "Organization",
+                "name": "SuporteWork"
+              }
+            },
+            {
+              "@type": "Service",
+              "serviceType": "Help Desk",
+              "provider": {
+                "@type": "Organization",
+                "name": "SuporteWork"
+              },
+              "name": "Help Desk",
+              "description": "Suporte técnico especializado com atendimento remoto e presencial para resolver problemas de hardware, software e rede."
+            },
+            {
+              "@type": "Service",
+              "serviceType": "Backup Remoto",
+              "provider": {
+                "@type": "Organization",
+                "name": "SuporteWork"
+              },
+              "name": "Backup Remoto",
+              "description": "Sistema automatizado de backup diário com criptografia de ponta a ponta para proteger seus dados críticos."
+            },
+            {
+              "@type": "Service",
+              "serviceType": "Controlador de Domínio",
+              "provider": {
+                "@type": "Organization",
+                "name": "SuporteWork"
+              },
+              "name": "Controlador de Domínio",
+              "description": "Sistema centralizado para gerenciar usuários, computadores e recursos da rede com Active Directory."
+            },
+            {
+              "@type": "Service",
+              "serviceType": "Firewall/VPN",
+              "provider": {
+                "@type": "Organization",
+                "name": "SuporteWork"
+              },
+              "name": "Firewall/VPN",
+              "description": "Proteção avançada contra ameaças cibernéticas e acesso remoto seguro para sua equipe."
+            },
+            {
+              "@type": "Service",
+              "serviceType": "Storage",
+              "provider": {
+                "@type": "Organization",
+                "name": "SuporteWork"
+              },
+              "name": "Storage",
+              "description": "Soluções de armazenamento empresarial escaláveis e seguras para gerenciar arquivos corporativos."
+            },
+            {
+              "@type": "Service",
+              "serviceType": "E-Mail Profissional",
+              "provider": {
+                "@type": "Organization",
+                "name": "SuporteWork"
+              },
+              "name": "E-Mail Profissional",
+              "description": "Serviço de e-mail profissional com seu domínio personalizado, proteção anti-spam e antivírus."
+            }
+          ]
+        }
+        </script>
     </head>
     <body class="index-page">
         <!-- Google Tag Manager (noscript) -->
         <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-PMNS6S8H"
         height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
         <!-- End Google Tag Manager (noscript) -->
-        <i class="header-toggle bi bi-list"></i>
+        <button type="button" class="header-toggle bi bi-list" aria-label="Abrir menu de navegação"></button>
         <header id="header" class="header d-flex flex-column justify-content-center">
             <nav id="navmenu" class="navmenu">
                 <ul>
                     <li>
-                        <a href="#hero" class="active"><i class="bi bi-house navicon" aria-hidden="true"></i><span>Home</span></a>
+                        <a href="#hero" class="active"><span class="bi bi-house navicon" aria-hidden="true"></span><span>Home</span></a>
                     </li>
                     <li>
-                        <a href="#about"><i class="bi bi-person navicon" aria-hidden="true"></i><span>Missão</span></a>
+                        <a href="#about"><span class="bi bi-person navicon" aria-hidden="true"></span><span>Missão</span></a>
                     </li>
                     <li>
-                        <a href="#services"><i class="bi bi-hdd-stack navicon" aria-hidden="true"></i><span>Serviços</span></a>
+                        <a href="#services"><span class="bi bi-hdd-stack navicon" aria-hidden="true"></span><span>Serviços</span></a>
                     </li>
                     <li>
-                        <a href="#contact"><i class="bi bi-envelope navicon" aria-hidden="true"></i><span>Contato</span></a>
+                        <a href="#contact"><span class="bi bi-envelope navicon" aria-hidden="true"></span><span>Contato</span></a>
                     </li>
                 </ul>
             </nav>
         </header>
         <main id="main" class="main">
             <section id="hero" class="hero section light-background">
-                <img src="assets/img/hero-bg.webp" alt="Ambiente de tecnologia com servidores e notebooks representando a infraestrutura de TI da SuporteWork" fetchpriority="high" decoding="async">
+                <img src="assets/img/hero-bg.webp" alt="Ambiente de tecnologia com servidores e notebooks representando a infraestrutura de TI da SuporteWork" fetchpriority="high" decoding="async" width="1920" height="1080">
                 <div class="container" data-aos="zoom-out">
                     <div class="row justify-content-center">
                         <div class="col-lg-9">
                             <h1>SuporteWork</h1>
                             <p>Especialistas em <span class="typed" data-typed-items="Virtualização de Servidores, Segurança de Dados, Backup na Nuvem, Firewall Corporativo, VPN Empresarial"></span><span class="typed-cursor typed-cursor--blink" aria-hidden="true"></span></p>
                             <div class="social-links">
-                                <a href="https://help.suporte.work" target="_blank" rel="noopener noreferrer"><i class="bi bi-headset"></i></a>
-                                <a href="https://vpn.suporte.work" target="_blank" rel="noopener noreferrer"><i class="bi bi-shield-check"></i></a>
-                                <a href="https://wa.me/5511999860590" target="_blank" rel="noopener noreferrer"><i class="bi bi-whatsapp"></i></a>
+                                <a href="https://help.suporte.work" target="_blank" rel="noopener noreferrer" aria-label="Acessar sistema de Helpdesk"><span class="bi bi-headset" aria-hidden="true"></span></a>
+                                <a href="https://vpn.suporte.work" target="_blank" rel="noopener noreferrer" aria-label="Acessar sistema de VPN"><span class="bi bi-shield-check" aria-hidden="true"></span></a>
+                                <a href="https://wa.me/5511999860590" target="_blank" rel="noopener noreferrer" aria-label="Entrar em contato pelo WhatsApp"><span class="bi bi-whatsapp" aria-hidden="true"></span></a>
                             </div>
                         </div>
                     </div>
@@ -73,7 +187,7 @@
                 <div class="container" data-aos="fade-up" data-aos-delay="100">
                     <div class="row gy-4 justify-content-center">
                         <div class="col-lg-4">
-                            <img src="assets/img/profile-img.webp" class="img-fluid" alt="Mauricio Oliveira, especialista em TI e fundador da SuporteWork" loading="lazy" decoding="async">
+                            <img src="assets/img/profile-img.webp" class="img-fluid" alt="Mauricio Oliveira, especialista em TI e fundador da SuporteWork" loading="lazy" decoding="async" width="500" height="500">
                         </div>
                         <div class="col-lg-8 content">
                             <h2>Por que Escolher a SuporteWork?</h2>
@@ -98,7 +212,7 @@
                         <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="100">
                             <div class="service-item item-cyan position-relative">
                                 <div class="icon">
-                                    <i class="bi bi-question-octagon"></i>
+                                    <span class="bi bi-question-octagon" aria-hidden="true"></span>
                                 </div><a href="#" class="stretched-link" data-bs-toggle="modal" data-bs-target="#modalHelpdesk"><h3>Help Desk</h3></a>
                                 <p>Suporte técnico especializado com atendimento remoto e presencial. Nossa equipe está pronta para resolver problemas de hardware, software e rede, garantindo o mínimo de tempo de inatividade para sua empresa.</p>
                             </div>
@@ -106,7 +220,7 @@
                         <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="200">
                             <div class="service-item item-orange position-relative">
                                 <div class="icon">
-                                    <i class="bi bi-copy"></i>
+                                    <span class="bi bi-copy" aria-hidden="true"></span>
                                 </div><a href="#" class="stretched-link" data-bs-toggle="modal" data-bs-target="#modalBackup"> <h3>Backup Remoto</h3> </a>
                                 <p>Sistema automatizado de backup diário com criptografia de ponta a ponta. Protegemos seus dados críticos em servidores redundantes, permitindo recuperação rápida em caso de emergência e garantindo a continuidade do seu negócio.</p>
                             </div>
@@ -115,7 +229,7 @@
                         <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="300">
                             <div class="service-item item-teal position-relative">
                                 <div class="icon">
-                                    <i class="bi bi-pc-display"></i>
+                                    <span class="bi bi-pc-display" aria-hidden="true"></span>
                                 </div><a href="#" class="stretched-link" data-bs-toggle="modal" data-bs-target="#modalAD"> <h3>Controlador de Domínio</h3> </a>
                                 <p>Sistema centralizado para gerenciar usuários, computadores e recursos da rede. Simplifique o acesso dos funcionários mantendo total controle sobre permissões e políticas de segurança da sua empresa.</p>
                             </div>
@@ -124,7 +238,7 @@
                         <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="400">
                             <div class="service-item item-red position-relative">
                                 <div class="icon">
-                                    <i class="bi bi-bricks"></i>
+                                    <span class="bi bi-bricks" aria-hidden="true"></span>
                                 </div><a href="#" class="stretched-link" data-bs-toggle="modal" data-bs-target="#modalFirewall"> <h3>Firewall/VPN</h3> </a>
                                 <p>Proteção avançada contra ameaças cibernéticas e acesso remoto seguro para sua equipe. Ideal para empresas com trabalho híbrido, garantindo que seus dados permaneçam protegidos mesmo com funcionários trabalhando de casa.</p>
                             </div>
@@ -133,7 +247,7 @@
                         <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="500">
                             <div class="service-item item-indigo position-relative">
                                 <div class="icon">
-                                    <i class="bi bi-calendar4-week icon"></i>
+                                    <span class="bi bi-calendar4-week icon" aria-hidden="true"></span>
                                 </div><a href="#" class="stretched-link" data-bs-toggle="modal" data-bs-target="#modalStorage"> <h3>Storage</h3> </a>
                                 <p>Soluções de armazenamento empresarial escaláveis e seguras. Gerencie arquivos corporativos, documentos e mídias com facilidade, mantendo backups automáticos e controle de versão para maior segurança dos dados.</p>
                             </div>
@@ -142,7 +256,7 @@
                         <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="600">
                             <div class="service-item item-pink position-relative">
                                 <div class="icon">
-                                    <i class="bi bi-envelope-at-fill"></i>
+                                    <span class="bi bi-envelope-at-fill" aria-hidden="true"></span>
                                 </div><a href="#" class="stretched-link" data-bs-toggle="modal" data-bs-target="#modalEmail"> <h3>E-Mail</h3> </a>
                                 <p>Serviço de e-mail profissional com seu domínio personalizado, incluindo proteção anti-spam, antivírus integrado e amplo espaço de armazenamento. Melhore a credibilidade da sua empresa com uma comunicação mais profissional.</p>
                             </div>
@@ -160,7 +274,7 @@
                 <div class="container" data-aos="fade" data-aos-delay="100">
                     <div class="row gy-4">
                         <div class="col-lg-4">
-                            <div class="info-item d-flex" data-aos="fade-up" data-aos-delay="200"><i class="bi bi-geo-alt flex-shrink-0"></i>
+                            <div class="info-item d-flex" data-aos="fade-up" data-aos-delay="200"><span class="bi bi-geo-alt flex-shrink-0" aria-hidden="true"></span>
                                 <div>
                                     <h3>Endereço</h3>
                                     <p>Av. Celso Garcia 1459, São Paulo. Cep: 03015-000</p>
@@ -170,7 +284,7 @@
                         <div class="col-lg-4">
                             <a href="https://wa.me/5511999860590" target="_blank" rel="noopener noreferrer" class="info-item-link">
                                 <div class="info-item d-flex" data-aos="fade-up" data-aos-delay="300">
-                                    <i class="bi bi-telephone flex-shrink-0"></i>
+                                    <span class="bi bi-telephone flex-shrink-0" aria-hidden="true"></span>
                                     <div>
                                         <h3>Telefone</h3>
                                         <p>(11) 99986-0590</p>
@@ -181,7 +295,7 @@
                         <div class="col-lg-4">
                             <a href="mailto:contato@suporte.work" target="_blank" rel="noopener noreferrer" class="info-item-link">
                                 <div class="info-item d-flex" data-aos="fade-up" data-aos-delay="400">
-                                    <i class="bi bi-envelope flex-shrink-0"></i>
+                                    <span class="bi bi-envelope flex-shrink-0" aria-hidden="true"></span>
                                     <div>
                                         <h3>Email</h3>
                                         <p>contato@suporte.work</p>
@@ -197,12 +311,12 @@
         </main>
         <footer id="footer" class="footer position-relative light-background">
             <div class="container">
-                <div class="copyright"><span>Copyright</span> <strong class="px-1 sitename">Mauricio Oliveira</strong> <span>Todos os direitos reservados</span>
+                <div class="copyright">&copy; 2025 <strong class="px-1 sitename">Mauricio Oliveira</strong>. Todos os direitos reservados.
                 </div>
             </div>
         </footer>
         
-        <a href="#" id="scroll-top" class="scroll-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
+        <a href="#" id="scroll-top" class="scroll-top d-flex align-items-center justify-content-center" aria-label="Voltar ao topo"><span class="bi bi-arrow-up-short" aria-hidden="true"></span></a>
         
         <div id="preloader"></div>
         

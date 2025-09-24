@@ -123,12 +123,12 @@ section::before, .section::before {
   color: var(--nav-color); font-family: var(--nav-font); display: flex; align-items: center; padding: 10px 18px; margin-bottom: 8px; font-size: 15px;
   border-radius: 50px; background: color-mix(in srgb, var(--default-color), transparent 92%); height: 56px; width: 100%; overflow: hidden; transition: .3s;
 }
-.navmenu a i { font-size: 20px; }
-.navmenu a span { padding: 0 5px 0 7px; }
-@media (min-width: 992px) { .navmenu a, .navmenu a:focus { max-width: 56px; } .navmenu a span { display: none; } }
+.navmenu a .navicon { font-size: 20px; }
+.navmenu a span:not(.navicon) { padding: 0 5px 0 7px; }
+@media (min-width: 992px) { .navmenu a, .navmenu a:focus { max-width: 56px; } .navmenu a span:not(.navicon) { display: none; } }
 .navmenu a:hover, .navmenu .active, .navmenu .active:focus, .navmenu li:hover>a { color: var(--contrast-color); background: var(--nav-hover-color); }
 .navmenu a:hover, .navmenu li:hover>a { max-width: 100%; }
-.navmenu a:hover span, .navmenu li:hover>a span { display: block; }
+.navmenu a:hover span:not(.navicon), .navmenu li:hover>a span:not(.navicon) { display: block; }
 
 /*--------------------------------------------------------------
 # Footer
@@ -158,7 +158,7 @@ section::before, .section::before {
 # Scroll Top
 --------------------------------------------------------------*/
 .scroll-top { position: fixed; visibility: hidden; opacity: 0; right: 15px; bottom: -15px; z-index: 99999; background-color: var(--accent-color); width: 44px; height: 44px; border-radius: 50px; transition: all .4s; }
-.scroll-top i { font-size: 24px; color: var(--contrast-color); line-height: 0; }
+.scroll-top .bi { font-size: 24px; color: var(--contrast-color); line-height: 0; }
 .scroll-top:hover { background-color: color-mix(in srgb, var(--accent-color), transparent 20%); color: var(--contrast-color); }
 .scroll-top.active { visibility: visible; opacity: 1; bottom: 15px; }
 
@@ -210,7 +210,7 @@ section::before, .section::before {
   transition: .3s ease-in-out;
   position: relative;
 }
-.services .service-item .icon i {
+.services .service-item .icon .bi {
   color: var(--contrast-color);
   font-size: 28px;
   transition: .5s;
@@ -222,7 +222,7 @@ section::before, .section::before {
 .services .service-item:hover .icon {
   background: var(--contrast-color);
 }
-.services .service-item:hover .icon i {
+.services .service-item:hover .icon .bi {
   color: var(--accent-color);
 }
 
@@ -232,11 +232,11 @@ section::before, .section::before {
 --------------------------------------------------------------*/
 .contact .info-item { padding: 30px; background: rgba(255,255,255,.02); border-radius: 16px; border: 1px solid rgba(255,255,255,.05); height: 100%; transition: all .3s ease; }
 .contact .info-item:hover { transform: translateY(-5px); background: rgba(255,255,255,.04); }
-.contact .info-item i { color: var(--contrast-color); background: var(--accent-color); font-size: 24px; width: 60px; height: 60px; display: flex; justify-content: center; align-items: center; border-radius: 50%; transition: all .3s ease-in-out; margin-right: 20px; box-shadow: 0 0 20px rgba(37, 99, 235, .2); }
+.contact .info-item .bi { color: var(--contrast-color); background: var(--accent-color); font-size: 24px; width: 60px; height: 60px; display: flex; justify-content: center; align-items: center; border-radius: 50%; transition: all .3s ease-in-out; margin-right: 20px; box-shadow: 0 0 20px rgba(37, 99, 235, .2); }
 .contact .info-item h3 { font-size: 22px; font-weight: 700; margin-bottom: 10px; color: var(--heading-color); }
 .contact .info-item p { margin-bottom: 0; font-size: 16px; line-height: 1.5; }
 .contact .info-item a { text-decoration: none; }
-.contact .info-item:hover i { background: var(--accent-color); color: var(--contrast-color); }
+.contact .info-item:hover .bi { background: var(--accent-color); color: var(--contrast-color); }
 
 
 /*--------------------------------------------------------------
@@ -273,4 +273,3 @@ section::before, .section::before {
 
 .modal a { color: var(--accent-color); }
 .modal a:hover { color: color-mix(in srgb, var(--accent-color), transparent 20%); }
-
