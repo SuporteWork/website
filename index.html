@@ -1,6 +1,13 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
     <head>
+        <!-- Google Tag Manager -->
+        <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+        new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+        j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+        'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+        })(window,document,'script','dataLayer','GTM-PMNS6S8H');</script>
+        <!-- End Google Tag Manager -->
         <meta charset="utf-8">
         <meta content="width=device-width, initial-scale=1.0" name="viewport">
         <title>SuporteWork | Consultoria e Suporte em TI</title>
@@ -12,13 +19,16 @@
         <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&family=Poppins:wght@300;400;500;600;700&family=Raleway:wght@300;400;500;600;700&display=swap" rel="stylesheet">
         <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
         <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css" rel="stylesheet">
-        <link href="assets/vendor/aos/aos.css" rel="stylesheet">
+        <link href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css" rel="stylesheet">
         <link href="assets/css/main.css" rel="stylesheet">
         <link rel="canonical" href="https://suporte.work/"/>
-        <link rel="preload" href="assets/vendor/bootstrap/js/bootstrap.bundle.min.js" as="script">
-        <link rel="preload" href="assets/img/hero-bg.webp" as="image" fetchpriority="high">
+        <link rel="preload" href="assets/img/hero-bg.webp" as="image">
     </head>
     <body class="index-page">
+        <!-- Google Tag Manager (noscript) -->
+        <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-PMNS6S8H"
+        height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+        <!-- End Google Tag Manager (noscript) -->
         <i class="header-toggle bi bi-list"></i>
         <header id="header" class="header d-flex flex-column justify-content-center">
             <nav id="navmenu" class="navmenu">
@@ -38,7 +48,7 @@
                 </ul>
             </nav>
         </header>
-        <main class="main">
+        <main id="main" class="main">
             <section id="hero" class="hero section light-background">
                 <img src="assets/img/hero-bg.webp" alt="Ambiente de tecnologia com servidores e notebooks representando a infraestrutura de TI da SuporteWork" fetchpriority="high" decoding="async">
                 <div class="container" data-aos="zoom-out">
@@ -158,23 +168,26 @@
                             </div>
                         </div>
                         <div class="col-lg-4">
-                            <div class="info-item d-flex" data-aos="fade-up" data-aos-delay="300">
-                                <a href="https://wa.me/5511999860590" target="_blank" rel="noopener noreferrer"><i class="bi bi-telephone flex-shrink-0"></i></a>
-                                <div>
-                                    <h3>Telefone</h3>
-                                    <p>(11) 99986-0590</p>
+                            <a href="https://wa.me/5511999860590" target="_blank" rel="noopener noreferrer" class="info-item-link">
+                                <div class="info-item d-flex" data-aos="fade-up" data-aos-delay="300">
+                                    <i class="bi bi-telephone flex-shrink-0"></i>
+                                    <div>
+                                        <h3>Telefone</h3>
+                                        <p>(11) 99986-0590</p>
+                                    </div>
                                 </div>
-                            </div>
+                            </a>
                         </div>
                         <div class="col-lg-4">
-                            <div class="info-item d-flex" data-aos="fade-up" data-aos-delay="400">
-                                <a href="mailto:contato@suporte.work" target="_blank" rel="noopener noreferrer"><i class="bi bi-envelope flex-shrink-0"></i></a>
-                                <div>
-                                    <h3>Email</h3>
-                                    <p>contato@suporte.work</p>
+                            <a href="mailto:contato@suporte.work" target="_blank" rel="noopener noreferrer" class="info-item-link">
+                                <div class="info-item d-flex" data-aos="fade-up" data-aos-delay="400">
+                                    <i class="bi bi-envelope flex-shrink-0"></i>
+                                    <div>
+                                        <h3>Email</h3>
+                                        <p>contato@suporte.work</p>
+                                    </div>
                                 </div>
-                            </div>
-                            
+                            </a>
                         </div>
                         
                     </div>
@@ -309,8 +322,8 @@
         </div>
 
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous" defer></script>
-        <script src="assets/vendor/aos/aos.js" defer></script>
-        <script src="assets/vendor/typed.js/typed.umd.js" defer></script>
+        <script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js" defer></script>
+        <script src="https://cdn.jsdelivr.net/npm/typed.js@2.1.0/dist/typed.umd.min.js" defer></script>
         <script src="assets/js/main.js" defer></script>
     </body>
 </html>
