@@ -5,12 +5,16 @@
    * Header toggle
    */
   const headerToggleBtn = document.querySelector('.header-toggle');
+  const header = document.querySelector('#header');
 
   if (headerToggleBtn) {
     function headerToggle() {
-      document.querySelector('#header').classList.toggle('header-show');
+      if (!header) return;
+
+      const isOpen = header.classList.toggle('header-show');
       headerToggleBtn.classList.toggle('bi-list');
       headerToggleBtn.classList.toggle('bi-x');
+      headerToggleBtn.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
     }
     headerToggleBtn.addEventListener('click', headerToggle);
   }
@@ -20,7 +24,7 @@
    */
   document.querySelectorAll('#navmenu a').forEach(navmenu => {
     navmenu.addEventListener('click', () => {
-      if (document.querySelector('.header-show')) {
+      if (headerToggleBtn && document.querySelector('.header-show')) {
         headerToggleBtn.click();
       }
     });
@@ -70,9 +74,9 @@
    * Init typed.js
    */
   const selectTyped = document.querySelector('.typed');
-  if (selectTyped) {
+  if (selectTyped && typeof Typed !== 'undefined') {
     let typed_strings = selectTyped.getAttribute('data-typed-items');
-    typed_strings = typed_strings.split(',');
+    typed_strings = typed_strings.split(',').map((item) => item.trim()).filter(Boolean);
     new Typed('.typed', {
       strings: typed_strings,
       loop: true,
@@ -102,25 +106,33 @@
     toggleScrollTop();
 
     // AOS init
-    AOS.init({
-      duration: 600,
-      easing: 'ease-in-out',
-      once: true,
-      mirror: false,
-      disable: () => window.matchMedia('(prefers-reduced-motion: reduce)').matches
-    });
+    if (typeof AOS !== 'undefined') {
+      AOS.init({
+        duration: 600,
+        easing: 'ease-in-out',
+        once: true,
+        mirror: false,
+        disable: () => window.matchMedia('(prefers-reduced-motion: reduce)').matches
+      });
+    }
 
     // Navmenu scrollspy activation
     navmenuScrollspy();
 
     // Hash link scrolling
     if (window.location.hash) {
-      if (document.querySelector(window.location.hash)) {
+      let section = null;
+      try {
+        section = document.querySelector(window.location.hash);
+      } catch (_) {
+        section = null;
+      }
+
+      if (section) {
         setTimeout(() => {
-          let section = document.querySelector(window.location.hash);
-          let scrollMarginTop = getComputedStyle(section).scrollMarginTop;
+          let scrollMarginTop = parseInt(getComputedStyle(section).scrollMarginTop, 10) || 0;
           window.scrollTo({
-            top: section.offsetTop - parseInt(scrollMarginTop),
+            top: section.offsetTop - scrollMarginTop,
             behavior: 'smooth'
           });
         }, 100);

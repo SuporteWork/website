@@ -170,6 +170,7 @@ section::before,
 
 .header-toggle {
   display: none;
+  border: 0;
   color: var(--contrast-color);
   background-color: var(--accent-color);
   font-size: 22px;
@@ -184,6 +185,15 @@ section::before,
   right: 15px;
   z-index: 99999;
   transition: all 0.3s ease;
+}
+
+.header-toggle:focus-visible,
+.navmenu a:focus-visible,
+.scroll-top:focus-visible,
+.social-links a:focus-visible,
+.info-item-link:focus-visible {
+  outline: 2px solid var(--accent-color);
+  outline-offset: 3px;
 }
 
 .header-toggle:hover {
@@ -471,7 +481,7 @@ section::before,
 }
 
 @media (max-width: 768px) {
-  .hero h2 {
+  .hero h1 {
     font-size: 32px;
   }
 
