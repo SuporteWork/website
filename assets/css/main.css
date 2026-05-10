@@ -528,22 +528,6 @@ section::before,
   line-height: 1.6;
 }
 
-.about .content ul i {
-  font-size: 16px;
-  margin-right: 8px;
-  color: var(--accent-color);
-  line-height: 0;
-}
-
-.about .content .fst-italic {
-  font-size: 16px;
-  line-height: 1.8;
-  padding: 25px !important;
-  background: rgba(255, 255, 255, .02);
-  border-radius: 10px;
-  border: 1px solid rgba(255, 255, 255, .05);
-}
-
 /*--------------------------------------------------------------
 # Services
 --------------------------------------------------------------*/
