@@ -48,8 +48,6 @@
       });
     });
   }
-  document.addEventListener('scroll', toggleScrollTop, { passive: true });
-
   /**
    * Navmenu Scrollspy
    */
@@ -68,7 +66,22 @@
       }
     })
   }
-  document.addEventListener('scroll', navmenuScrollspy, { passive: true });
+
+  /**
+   * Throttled scroll handler (requestAnimationFrame)
+   */
+  let scrollTicking = false;
+  function onScroll() {
+    if (!scrollTicking) {
+      requestAnimationFrame(() => {
+        toggleScrollTop();
+        navmenuScrollspy();
+        scrollTicking = false;
+      });
+      scrollTicking = true;
+    }
+  }
+  document.addEventListener('scroll', onScroll, { passive: true });
 
   /**
    * Init typed.js

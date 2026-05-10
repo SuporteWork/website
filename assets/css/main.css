@@ -46,7 +46,7 @@ body {
 a {
   color: var(--accent-color);
   text-decoration: none;
-  transition: 0.3s;
+  transition: color 0.3s;
 }
 
 a:hover {
@@ -59,7 +59,7 @@ h3,
 h4,
 h5,
 h6 {
-  color: #23609d;
+  color: var(--heading-color);
   font-family: var(--heading-font);
 }
 
@@ -283,7 +283,6 @@ section::before,
   text-align: center;
   padding: 40px 0;
   position: relative;
-  backdrop-filter: blur(10px);
   border-top: 1px solid rgba(255, 255, 255, .1);
 }
 
@@ -346,6 +345,7 @@ section::before,
   border-radius: 50%;
   width: 60px;
   height: 60px;
+  will-change: transform;
   animation: animate-preloader 1.5s linear infinite;
 }
 
@@ -549,12 +549,11 @@ section::before,
 --------------------------------------------------------------*/
 .services .service-item {
   background-color: rgba(255, 255, 255, .03);
-  backdrop-filter: blur(10px);
   border: 1px solid rgba(255, 255, 255, .1);
   height: 100%;
   padding: 60px 30px;
   text-align: center;
-  transition: all .3s ease;
+  transition: transform 0.3s ease, box-shadow 0.3s ease, background-color 0.3s ease, border-color 0.3s ease;
   border-radius: 16px;
 }
 
@@ -616,7 +615,7 @@ section::before,
   border-radius: 16px;
   border: 1px solid rgba(255, 255, 255, .05);
   height: 100%;
-  transition: all .3s ease;
+  transition: transform 0.3s ease, background-color 0.3s ease;
 }
 
 .contact .info-item:hover {
@@ -661,6 +660,14 @@ section::before,
   color: var(--contrast-color);
 }
 
+.info-item-link {
+  color: inherit;
+  text-decoration: none;
+}
+
+.info-item-link:hover {
+  color: inherit;
+}
 
 /*--------------------------------------------------------------
 # Modals (Bootstrap) - herdam tipografia e paleta do tema

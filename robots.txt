@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
-Disallow: /assets/vendor/
-Disallow: /assets/scss/
+
+Sitemap: https://suporte.work/sitemap.xml
