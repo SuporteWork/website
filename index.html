@@ -2,6 +2,8 @@
 <html lang="pt-BR">
 
 <head>
+    <meta charset="utf-8">
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
     <!-- Google Tag Manager -->
     <script>(function (w, d, s, l, i) {
             w[l] = w[l] || []; w[l].push({
@@ -12,14 +14,16 @@
                     'https://www.googletagmanager.com/gtm.js?id=' + i + dl; f.parentNode.insertBefore(j, f);
         })(window, document, 'script', 'dataLayer', 'GTM-PMNS6S8H');</script>
     <!-- End Google Tag Manager -->
-    <meta charset="utf-8">
-    <meta content="width=device-width, initial-scale=1.0" name="viewport">
     <title>SuporteWork | Consultoria e Suporte em TI</title>
-    <meta
-        content="A SuporteWork oferece consultoria e soluções de TI personalizadas para empresas. Especialistas em Helpdesk, Segurança de Dados, Backup, Firewall e mais."
-        name="description">
+    <meta content="A SuporteWork oferece consultoria e soluções de TI personalizadas para empresas. Especialistas em Helpdesk, Segurança de Dados, Backup, Firewall e mais." name="description">
+    <meta name="keywords" content="suporte TI São Paulo, helpdesk empresa, backup remoto, firewall corporativo, consultoria TI, Active Directory, VPN empresarial">
+    <meta name="author" content="Mauricio Oliveira — SuporteWork">
+    <meta name="geo.region" content="BR-SP">
+    <meta name="geo.placename" content="São Paulo">
+    <meta name="geo.position" content="-23.5505;-46.6333">
+    <meta name="ICBM" content="-23.5505, -46.6333">
     <link href="assets/img/favicon.png" rel="icon">
-    <link href="assets/img/apple-touch-icon.png" rel="apple-touch-icon">
+    <link href="assets/img/apple-touch-icon.png" rel="apple-touch-icon" sizes="180x180">
 
     <!-- Resource Hints -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -54,6 +58,12 @@
         media="print" onload="this.media='all'">
     <noscript>
         <link href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css" rel="stylesheet">
+        <style>
+            [data-aos] {
+                opacity: 1 !important;
+                transform: none !important;
+            }
+        </style>
     </noscript>
     <link href="assets/css/main.css" rel="stylesheet">
     <link rel="canonical" href="https://suporte.work/" />
@@ -63,7 +73,10 @@
     <meta property="og:title" content="SuporteWork — Consultoria e Suporte em TI | São Paulo">
     <meta property="og:description"
         content="SuporteWork oferece suporte técnico, firewall corporativo, backup remoto e soluções de storage em São Paulo. Atendimento remoto e presencial. Peça um orçamento.">
-    <meta property="og:image" content="https://suporte.work/assets/img/profile-img.webp">
+    <meta property="og:image" content="https://suporte.work/assets/img/og-image.webp">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+    <meta property="og:image:alt" content="SuporteWork — Consultoria e Suporte em TI em São Paulo">
 
     <!-- Twitter -->
     <meta property="twitter:card" content="summary_large_image">
@@ -71,7 +84,7 @@
     <meta property="twitter:title" content="SuporteWork — Consultoria e Suporte em TI | São Paulo">
     <meta property="twitter:description"
         content="SuporteWork oferece suporte técnico, firewall corporativo, backup remoto e soluções de storage em São Paulo. Atendimento remoto e presencial. Peça um orçamento.">
-    <meta property="twitter:image" content="https://suporte.work/assets/img/profile-img.webp">
+    <meta property="twitter:image" content="https://suporte.work/assets/img/og-image.webp">
 
     <script type="application/ld+json">
         {
@@ -82,6 +95,18 @@
               "name": "SuporteWork",
               "url": "https://suporte.work/",
               "logo": "https://suporte.work/assets/img/favicon.png",
+              "description": "SuporteWork oferece consultoria e suporte em TI para empresas em São Paulo, incluindo Help Desk, Backup Remoto e Firewall.",
+              "address": {
+                "@type": "PostalAddress",
+                "streetAddress": "Av. Celso Garcia 1459",
+                "addressLocality": "São Paulo",
+                "addressRegion": "SP",
+                "postalCode": "03015-000",
+                "addressCountry": "BR"
+              },
+              "email": "contato@suporte.work",
+              "openingHours": "Mo-Fr 09:00-18:00",
+              "priceRange": "$$",
               "contactPoint": {
                 "@type": "ContactPoint",
                 "telephone": "+55-11-99986-0590",
@@ -206,7 +231,7 @@
                         assets/img/hero-bg.webp 1920w"
                 sizes="100vw"
                 alt="Ambiente de tecnologia com servidores e notebooks representando a infraestrutura de TI da SuporteWork"
-                fetchpriority="high" width="1920" height="1168">
+                fetchpriority="high" loading="eager" width="1920" height="1168">
             <div class="container" data-aos="zoom-out">
                 <div class="row justify-content-center">
                     <div class="col-lg-9">
@@ -277,10 +302,10 @@
                         <div class="service-item position-relative">
                             <div class="icon">
                                 <span class="bi bi-question-octagon" aria-hidden="true"></span>
-                            </div><a href="javascript:void(0)" class="stretched-link" data-bs-toggle="modal"
+                            </div><button type="button" class="stretched-link border-0 bg-transparent p-0" data-bs-toggle="modal"
                                 data-bs-target="#modalHelpdesk">
                                 <h3>Help Desk</h3>
-                            </a>
+                            </button>
                             <p>Suporte técnico especializado com atendimento remoto e presencial. Nossa equipe está
                                 pronta para resolver problemas de hardware, software e rede, garantindo o mínimo de
                                 tempo de inatividade para sua empresa.</p>
@@ -290,10 +315,10 @@
                         <div class="service-item position-relative">
                             <div class="icon">
                                 <span class="bi bi-copy" aria-hidden="true"></span>
-                            </div><a href="javascript:void(0)" class="stretched-link" data-bs-toggle="modal"
+                            </div><button type="button" class="stretched-link border-0 bg-transparent p-0" data-bs-toggle="modal"
                                 data-bs-target="#modalBackup">
                                 <h3>Backup Remoto</h3>
-                            </a>
+                            </button>
                             <p>Sistema automatizado de backup diário com criptografia de ponta a ponta. Protegemos seus
                                 dados críticos em servidores redundantes, permitindo recuperação rápida em caso de
                                 emergência e garantindo a continuidade do seu negócio.</p>
@@ -304,9 +329,9 @@
                         <div class="service-item position-relative">
                             <div class="icon">
                                 <span class="bi bi-pc-display" aria-hidden="true"></span>
-                            </div><a href="javascript:void(0)" class="stretched-link" data-bs-toggle="modal" data-bs-target="#modalAD">
+                            </div><button type="button" class="stretched-link border-0 bg-transparent p-0" data-bs-toggle="modal" data-bs-target="#modalAD">
                                 <h3>Controlador de Domínio</h3>
-                            </a>
+                            </button>
                             <p>Sistema centralizado para gerenciar usuários, computadores e recursos da rede.
                                 Simplifique o acesso dos funcionários mantendo total controle sobre permissões e
                                 políticas de segurança da sua empresa.</p>
@@ -317,10 +342,10 @@
                         <div class="service-item position-relative">
                             <div class="icon">
                                 <span class="bi bi-bricks" aria-hidden="true"></span>
-                            </div><a href="javascript:void(0)" class="stretched-link" data-bs-toggle="modal"
+                            </div><button type="button" class="stretched-link border-0 bg-transparent p-0" data-bs-toggle="modal"
                                 data-bs-target="#modalFirewall">
                                 <h3>Firewall/VPN</h3>
-                            </a>
+                            </button>
                             <p>Proteção avançada contra ameaças cibernéticas e acesso remoto seguro para sua equipe.
                                 Ideal para empresas com trabalho híbrido, garantindo que seus dados permaneçam
                                 protegidos mesmo com funcionários trabalhando de casa.</p>
@@ -331,10 +356,10 @@
                         <div class="service-item position-relative">
                             <div class="icon">
                                 <span class="bi bi-calendar4-week" aria-hidden="true"></span>
-                            </div><a href="javascript:void(0)" class="stretched-link" data-bs-toggle="modal"
+                            </div><button type="button" class="stretched-link border-0 bg-transparent p-0" data-bs-toggle="modal"
                                 data-bs-target="#modalStorage">
                                 <h3>Storage</h3>
-                            </a>
+                            </button>
                             <p>Soluções de armazenamento empresarial escaláveis e seguras. Gerencie arquivos
                                 corporativos, documentos e mídias com facilidade, mantendo backups automáticos e
                                 controle de versão para maior segurança dos dados.</p>
@@ -345,10 +370,10 @@
                         <div class="service-item position-relative">
                             <div class="icon">
                                 <span class="bi bi-envelope-at-fill" aria-hidden="true"></span>
-                            </div><a href="javascript:void(0)" class="stretched-link" data-bs-toggle="modal"
+                            </div><button type="button" class="stretched-link border-0 bg-transparent p-0" data-bs-toggle="modal"
                                 data-bs-target="#modalEmail">
                                 <h3>E-Mail</h3>
-                            </a>
+                            </button>
                             <p>Serviço de e-mail profissional com seu domínio personalizado, incluindo proteção
                                 anti-spam, antivírus integrado e amplo espaço de armazenamento. Melhore a credibilidade
                                 da sua empresa com uma comunicação mais profissional.</p>
@@ -372,7 +397,7 @@
                                 class="bi bi-geo-alt flex-shrink-0" aria-hidden="true"></span>
                             <div>
                                 <h3>Endereço</h3>
-                                <p>Av. Celso Garcia 1459, São Paulo. Cep: 03015-000</p>
+                                <address class="mb-0">Av. Celso Garcia 1459, São Paulo. Cep: 03015-000</address>
                             </div>
                         </div>
                     </div>
@@ -408,10 +433,10 @@
     </main>
     <footer id="footer" class="footer position-relative light-background" role="contentinfo">
         <div class="container">
-            <div class="copyright">&copy; <span id="copyright-year">2025</span> <strong class="px-1 sitename">Mauricio
+            <div class="copyright">&copy; <span id="copyright-year">2026</span> <strong class="px-1 sitename">Mauricio
                     Oliveira</strong>. Todos os direitos reservados.
             </div>
-            <div class="credits">
+            <div class="credits mt-2">
                 Designed by <a href="https://suporte.work/" target="_blank" rel="noopener noreferrer">SuporteWork</a>
             </div>
         </div>
@@ -427,8 +452,8 @@
         <div class="modal-dialog modal-lg modal-dialog-centered modal-dialog-scrollable">
             <div class="modal-content">
                 <div class="modal-header">
-                    <h5 class="modal-title" id="modalHelpdeskLabel">Help Desk Corporativo — Suporte Técnico Rápido e
-                        Confiável</h5>
+                    <h2 class="modal-title h5" id="modalHelpdeskLabel">Help Desk Corporativo — Suporte Técnico Rápido e
+                        Confiável</h2>
                     <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Fechar"></button>
                 </div>
                 <div class="modal-body">
@@ -448,7 +473,7 @@
         <div class="modal-dialog modal-lg modal-dialog-centered modal-dialog-scrollable">
             <div class="modal-content">
                 <div class="modal-header">
-                    <h5 class="modal-title" id="modalBackupLabel">Backup Remoto Seguro e Automatizado</h5>
+                    <h2 class="modal-title h5" id="modalBackupLabel">Backup Remoto Seguro e Automatizado</h2>
                     <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Fechar"></button>
                 </div>
                 <div class="modal-body">
@@ -468,7 +493,7 @@
         <div class="modal-dialog modal-lg modal-dialog-centered modal-dialog-scrollable">
             <div class="modal-content">
                 <div class="modal-header">
-                    <h5 class="modal-title" id="modalADLabel">Controlador de Domínio e Gestão de Diretório</h5>
+                    <h2 class="modal-title h5" id="modalADLabel">Controlador de Domínio e Gestão de Diretório</h2>
                     <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Fechar"></button>
                 </div>
                 <div class="modal-body">
@@ -487,7 +512,7 @@
         <div class="modal-dialog modal-lg modal-dialog-centered modal-dialog-scrollable">
             <div class="modal-content">
                 <div class="modal-header">
-                    <h5 class="modal-title" id="modalFirewallLabel">Firewall Corporativo e VPN Segura</h5>
+                    <h2 class="modal-title h5" id="modalFirewallLabel">Firewall Corporativo e VPN Segura</h2>
                     <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Fechar"></button>
                 </div>
                 <div class="modal-body">
@@ -507,7 +532,7 @@
         <div class="modal-dialog modal-lg modal-dialog-centered modal-dialog-scrollable">
             <div class="modal-content">
                 <div class="modal-header">
-                    <h5 class="modal-title" id="modalStorageLabel">Storage Empresarial e Gerenciamento de Dados</h5>
+                    <h2 class="modal-title h5" id="modalStorageLabel">Storage Empresarial e Gerenciamento de Dados</h2>
                     <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Fechar"></button>
                 </div>
                 <div class="modal-body">
@@ -526,7 +551,7 @@
         <div class="modal-dialog modal-lg modal-dialog-centered modal-dialog-scrollable">
             <div class="modal-content">
                 <div class="modal-header">
-                    <h5 class="modal-title" id="modalEmailLabel">E‑mail Profissional e Seguro para Empresas</h5>
+                    <h2 class="modal-title h5" id="modalEmailLabel">E‑mail Profissional e Seguro para Empresas</h2>
                     <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Fechar"></button>
                 </div>
                 <div class="modal-body">
